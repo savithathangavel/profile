@@ -1,853 +1,852 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Savitha Thangavel – Resume</title>
-  <meta name="description" content="Professional resume of Savitha Thangavel." />
-  <style>
-    :root {
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #1e293b;
-      --muted: #64748b;
-      --accent: #3b82f6;
-      --accent-light: #dbeafe;
-      --border: #e2e8f0;
-      --hover: #f1f5f9;
-      --chip-bg: #eff6ff;
-      --shadow: 0 2px 8px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.06);
-      --shadow-hover: 0 4px 12px rgba(0,0,0,.15), 0 2px 6px rgba(0,0,0,.08);
-      --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --border-radius: 12px;
-      --spacing: 20px;
-    }
- 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f172a;
-        --card: #1e293b;
-        --text: #f1f5f9;
-        --muted: #94a3b8;
-        --accent: #60a5fa;
-        --accent-light: #1e3a8a;
-        --border: #334155;
-        --hover: #475569;
-        --chip-bg: #1e3a8a;
-        --shadow: 0 2px 8px rgba(0,0,0,.3), 0 1px 3px rgba(0,0,0,.2);
-        --shadow-hover: 0 4px 12px rgba(0,0,0,.4), 0 2px 6px rgba(0,0,0,.25);
-        --gradient: linear-gradient(135deg, #4338ca 0%, #7c3aed 100%);
-      }
-      a { color: #93c5fd; }
-    }
- 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-   
-    body {
-      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-size: 16px;
-    }
- 
-    .wrapper {
-      max-width: 1000px;
-      margin: var(--spacing) auto;
-      padding: 0 var(--spacing);
-      animation: fadeIn 0.8s ease-out;
-    }
- 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
- 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: var(--spacing);
-      padding: 24px 32px;
-      background: var(--gradient);
-      color: white;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      margin-bottom: var(--spacing);
-    }
- 
-    header:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-    }
- 
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 150px;
-      height: 150px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 50%;
-      transform: translate(50%, -50%);
-      transition: all 0.3s ease;
-    }
- 
-    header:hover::before {
-      background: rgba(255,255,255,0.12);
-      transform: translate(50%, -50%) scale(1.1);
-    }
- 
-    .identity {
-      position: relative;
-      z-index: 1;
-    }
- 
-    .identity .name {
-      font-size: clamp(22px, 4vw, 32px);
-      font-weight: 800;
-      margin: 0 0 6px 0;
-      letter-spacing: -0.02em;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
- 
-    .identity .tagline {
-      margin: 0;
-      color: rgba(255,255,255,0.9);
-      font-size: clamp(0.85rem, 2.5vw, 1rem);
-      font-weight: 400;
-      opacity: 0.95;
-    }
- 
-    .contact {
-      display: grid;
-      gap: 6px;
-      text-align: right;
-      font-size: clamp(0.8rem, 2vw, 0.9rem);
-      position: relative;
-      z-index: 1;
-    }
- 
-    .contact > div {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      justify-content: flex-end;
-      padding: 3px 8px;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-      min-height: 28px;
-    }
- 
-    .contact > div:hover {
-      background: rgba(255,255,255,0.12);
-      transform: translateX(-2px);
-    }
- 
-    .contact a {
-      color: inherit;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
- 
-    .contact a:hover {
-      opacity: 0.8;
-      text-decoration: underline;
-    }
- 
-    @media (max-width: 860px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        padding: 20px 24px;
-        gap: 12px;
-      }
-      .contact {
-        text-align: left;
-        width: 100%;
-        gap: 4px;
-      }
-      .contact > div {
-        justify-content: flex-start;
-        font-size: 0.85rem;
-      }
-      .contact > div:hover {
-        transform: none;
-      }
-    }
- 
-    @media (max-width: 480px) {
-      .wrapper {
-        padding: 0 16px;
-        margin: 16px auto;
-      }
-      header {
-        padding: 16px 20px;
-        border-radius: 10px;
-      }
-      .identity .name {
-        font-size: 20px;
-      }
-      .identity .tagline {
-        font-size: 0.85rem;
-      }
-      .contact {
-        font-size: 0.8rem;
-      }
-      .contact > div {
-        min-height: 24px;
-        padding: 2px 6px;
-      }
-    }
- 
-    section {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--border-radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      margin-bottom: var(--spacing);
-      overflow: hidden;
-    }
- 
-    section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 3px;
-      background: var(--accent);
-      transition: width 0.3s ease;
-    }
- 
-    section:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--accent-light);
-    }
- 
-    section:hover::before {
-      width: 100%;
-    }
- 
-    section:last-child {
-      margin-bottom: 0;
-    }
- 
-    h2 {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--accent);
-      margin: 0 0 18px 0;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      position: relative;
-    }
- 
-    h2::before {
-      content: '';
-      width: 4px;
-      height: 18px;
-      background: linear-gradient(135deg, var(--accent), #60a5fa);
-      border-radius: 2px;
-      box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
-    }
- 
-    .summary p {
-      margin: 0;
-      font-size: clamp(0.95rem, 2vw, 1rem);
-      line-height: 1.7;
-    }
- 
-    .summary-bullets {
-      margin: 0;
-      padding-left: 22px;
-      list-style-type: none;
-      position: relative;
-    }
- 
-    .summary-bullets li {
-      margin: 14px 0;
-      line-height: 1.65;
-      font-size: clamp(0.9rem, 2vw, 0.95rem);
-      text-align: left;
-      position: relative;
-      padding-left: 8px;
-      transition: all 0.2s ease;
-    }
- 
-    .summary-bullets li:hover {
-      color: var(--accent);
-      transform: translateX(2px);
-    }
- 
-    .summary-bullets li::before {
-      content: '▸';
-      color: var(--accent);
-      font-weight: bold;
-      position: absolute;
-      left: -18px;
-      transition: all 0.2s ease;
-    }
- 
-    .summary-bullets li:hover::before {
-      transform: scale(1.2);
-    }
- 
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
- 
-    .chip {
-      background: var(--chip-bg);
-      color: var(--accent);
-      border: 1px solid rgba(59, 130, 246, 0.2);
-      border-radius: 20px;
-      padding: 8px 16px;
-      font-size: clamp(0.8rem, 2vw, 0.875rem);
-      font-weight: 500;
-      white-space: nowrap;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: default;
-      min-height: 36px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
- 
-    .chip::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-      transition: left 0.5s;
-    }
- 
-    .chip:hover {
-      background: var(--accent);
-      color: white;
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
-      border-color: var(--accent);
-    }
- 
-    .chip:hover::before {
-      left: 100%;
-    }
- 
-    .job {
-      margin-bottom: 30px;
-      padding-bottom: 26px;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      transition: all 0.2s ease;
-    }
- 
-    .job:hover {
-      padding-left: 8px;
-      border-left: 3px solid var(--accent);
-    }
- 
-    .job:last-child {
-      margin-bottom: 0;
-      border-bottom: none;
-      padding-bottom: 0;
-    }
- 
-    .job-header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 12px 16px;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
- 
-    .job-title {
-      font-weight: 700;
-      font-size: clamp(1rem, 2.5vw, 1.125rem);
-      color: var(--text);
-      transition: color 0.2s ease;
-    }
- 
-    .job:hover .job-title {
-      color: var(--accent);
-    }
- 
-    .job-meta {
-      color: var(--muted);
-      font-size: clamp(0.85rem, 2vw, 0.9rem);
-      font-weight: 500;
-    }
- 
-    .job-location {
-      color: var(--muted);
-    }
- 
-    .bullets {
-      margin: 18px 0 0 0;
-      padding-left: 22px;
-      list-style-type: none;
-    }
- 
-    .bullets li {
-      margin: 12px 0;
-      line-height: 1.65;
-      position: relative;
-      font-size: clamp(0.9rem, 2vw, 1rem);
-      padding-left: 8px;
-      transition: all 0.2s ease;
-    }
- 
-    .bullets li:hover {
-      color: var(--accent);
-      transform: translateX(2px);
-    }
- 
-    .bullets li::before {
-      content: '•';
-      color: var(--accent);
-      font-weight: bold;
-      position: absolute;
-      left: -18px;
-      font-size: 1.2em;
-      transition: all 0.2s ease;
-    }
- 
-    .bullets li:hover::before {
-      transform: scale(1.2);
-    }
- 
-    .edu-item, .cert-item {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 10px 16px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--border);
-      transition: all 0.2s ease;
-      border-radius: 8px;
-      margin: 0 -12px;
-      padding-left: 12px;
-      padding-right: 12px;
-      position: relative;
-    }
- 
-    .edu-item::before, .cert-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 0;
-      background: var(--accent);
-      transition: width 0.2s ease;
-    }
- 
-    .edu-item:hover, .cert-item:hover {
-      background: var(--hover);
-      transform: translateX(4px);
-    }
- 
-    .edu-item:hover::before, .cert-item:hover::before {
-      width: 3px;
-    }
- 
-    .edu-item:last-child, .cert-item:last-child {
-      border-bottom: 0;
-    }
- 
-    .minor {
-      color: var(--muted);
-      font-size: clamp(0.85rem, 2vw, 0.9rem);
-      font-weight: 500;
-    }
- 
-    @media (max-width: 600px) {
-      .job-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-     
-      .edu-item, .cert-item {
-        grid-template-columns: 1fr;
-        gap: 6px;
-        text-align: left;
-      }
-     
-      .chips {
-        gap: 8px;
-      }
-     
-      .chip {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-      }
-     
-      section {
-        padding: 20px;
-        border-radius: 10px;
-      }
- 
-      .summary-bullets {
-        padding-left: 18px;
-      }
-     
-      .summary-bullets li {
-        margin: 12px 0;
-        font-size: 0.85rem;
-      }
- 
-      .bullets {
-        padding-left: 18px;
-      }
-    }
- 
-    @media (max-width: 400px) {
-      .wrapper {
-        padding: 0 12px;
-      }
-     
-      header {
-        padding: 14px 16px;
-      }
-     
-      section {
-        padding: 16px;
-      }
-     
-      .contact > div {
-        flex-wrap: wrap;
-        gap: 4px;
-      }
-    }
- 
-    /* Smooth scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
- 
-    /* Better focus states */
-    *:focus {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-      border-radius: 4px;
-    }
- 
-    /* Loading animation */
-    @keyframes pulse {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
-    }
- 
-    .loading {
-      animation: pulse 2s infinite;
-    }
- 
-    /* Scroll animations */
-    @keyframes slideInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
- 
-    section {
-      animation: slideInUp 0.6s ease-out forwards;
-    }
- 
-    section:nth-child(2) { animation-delay: 0.1s; }
-    section:nth-child(3) { animation-delay: 0.2s; }
-    section:nth-child(4) { animation-delay: 0.3s; }
-    section:nth-child(5) { animation-delay: 0.4s; }
-    section:nth-child(6) { animation-delay: 0.5s; }
- 
-    @media print {
-      body { background: #fff; color: #000; }
-      header { background: #4338ca !important; }
-      header, section {
-        box-shadow: none;
-        border-color: #ddd;
-        break-inside: avoid;
-        animation: none;
-      }
-      a { color: inherit; text-decoration: none; }
-      .wrapper { margin: 0; padding: 0; }
-      section { margin-bottom: 16px; }
-     
-      .chip:hover, .bullets li:hover, .summary-bullets li:hover,
-      .edu-item:hover, .cert-item:hover, .job:hover {
-        transform: none;
-        color: inherit;
-      }
-    }
- 
-    /* Accessibility improvements */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Savitha Thangavel – Resume</title>
+  <meta name="description" content="Professional resume of Savitha Thangavel." />
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --border: #e2e8f0;
+      --hover: #f1f5f9;
+      --chip-bg: #eff6ff;
+      --shadow: 0 2px 8px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.06);
+      --shadow-hover: 0 4px 12px rgba(0,0,0,.15), 0 2px 6px rgba(0,0,0,.08);
+      --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --border-radius: 12px;
+      --spacing: 20px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --card: #1e293b;
+        --text: #f1f5f9;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+        --accent-light: #1e3a8a;
+        --border: #334155;
+        --hover: #475569;
+        --chip-bg: #1e3a8a;
+        --shadow: 0 2px 8px rgba(0,0,0,.3), 0 1px 3px rgba(0,0,0,.2);
+        --shadow-hover: 0 4px 12px rgba(0,0,0,.4), 0 2px 6px rgba(0,0,0,.25);
+        --gradient: linear-gradient(135deg, #4338ca 0%, #7c3aed 100%);
+      }
+      a { color: #93c5fd; }
+    }
+
+    * { 
+      box-sizing: border-box; 
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 16px;
+    }
+
+    .wrapper {
+      max-width: 1000px;
+      margin: var(--spacing) auto;
+      padding: 0 var(--spacing);
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--spacing);
+      padding: 24px 32px;
+      background: var(--gradient);
+      color: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-bottom: var(--spacing);
+    }
+
+    header:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      transform: translate(50%, -50%);
+      transition: all 0.3s ease;
+    }
+
+    header:hover::before {
+      background: rgba(255,255,255,0.12);
+      transform: translate(50%, -50%) scale(1.1);
+    }
+
+    .identity {
+      position: relative;
+      z-index: 1;
+    }
+
+    .identity .name {
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 800;
+      margin: 0 0 6px 0;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .identity .tagline {
+      margin: 0;
+      color: rgba(255,255,255,0.9);
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+      font-weight: 400;
+      opacity: 0.95;
+    }
+
+    .contact {
+      display: grid;
+      gap: 6px;
+      text-align: right;
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact > div {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      justify-content: flex-end;
+      padding: 3px 8px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      min-height: 28px;
+    }
+
+    .contact > div:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateX(-2px);
+    }
+
+    .contact a { 
+      color: inherit; 
+      text-decoration: none; 
+      transition: all 0.2s ease;
+    }
+
+    .contact a:hover { 
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 860px) {
+      header { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        text-align: left;
+        padding: 20px 24px;
+        gap: 12px;
+      }
+      .contact { 
+        text-align: left; 
+        width: 100%;
+        gap: 4px;
+      }
+      .contact > div {
+        justify-content: flex-start;
+        font-size: 0.85rem;
+      }
+      .contact > div:hover {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrapper { 
+        padding: 0 16px; 
+        margin: 16px auto; 
+      }
+      header { 
+        padding: 16px 20px;
+        border-radius: 10px;
+      }
+      .identity .name { 
+        font-size: 20px; 
+      }
+      .identity .tagline {
+        font-size: 0.85rem;
+      }
+      .contact { 
+        font-size: 0.8rem; 
+      }
+      .contact > div {
+        min-height: 24px;
+        padding: 2px 6px;
+      }
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      margin-bottom: var(--spacing);
+      overflow: hidden;
+    }
+
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-light);
+    }
+
+    section:hover::before {
+      width: 100%;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin: 0 0 18px 0;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+    }
+
+    h2::before {
+      content: '';
+      width: 4px;
+      height: 18px;
+      background: linear-gradient(135deg, var(--accent), #60a5fa);
+      border-radius: 2px;
+      box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+    }
+
+    .summary p { 
+      margin: 0;
+      font-size: clamp(0.95rem, 2vw, 1rem);
+      line-height: 1.7;
+    }
+
+    .summary-bullets { 
+      margin: 0; 
+      padding-left: 22px;
+      list-style-type: none;
+      position: relative;
+    }
+
+    .summary-bullets li { 
+      margin: 14px 0; 
+      line-height: 1.65;
+      font-size: clamp(0.9rem, 2vw, 0.95rem);
+      text-align: left;
+      position: relative;
+      padding-left: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .summary-bullets li:hover {
+      color: var(--accent);
+      transform: translateX(2px);
+    }
+
+    .summary-bullets li::before {
+      content: '▸';
+      color: var(--accent);
+      font-weight: bold;
+      position: absolute;
+      left: -18px;
+      transition: all 0.2s ease;
+    }
+
+    .summary-bullets li:hover::before {
+      transform: scale(1.2);
+    }
+
+    .chips { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 10px; 
+    }
+
+    .chip {
+      background: var(--chip-bg);
+      color: var(--accent);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-size: clamp(0.8rem, 2vw, 0.875rem);
+      font-weight: 500;
+      white-space: nowrap;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: default;
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chip::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.5s;
+    }
+
+    .chip:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+      border-color: var(--accent);
+    }
+
+    .chip:hover::before {
+      left: 100%;
+    }
+
+    .job { 
+      margin-bottom: 30px; 
+      padding-bottom: 26px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    .job:hover {
+      padding-left: 8px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .job:last-child { 
+      margin-bottom: 0; 
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 12px 16px;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .job-title { 
+      font-weight: 700; 
+      font-size: clamp(1rem, 2.5vw, 1.125rem);
+      color: var(--text);
+      transition: color 0.2s ease;
+    }
+
+    .job:hover .job-title {
+      color: var(--accent);
+    }
+
+    .job-meta { 
+      color: var(--muted); 
+      font-size: clamp(0.85rem, 2vw, 0.9rem);
+      font-weight: 500;
+    }
+
+    .job-location { 
+      color: var(--muted); 
+    }
+
+    .bullets { 
+      margin: 18px 0 0 0; 
+      padding-left: 22px;
+      list-style-type: none;
+    }
+
+    .bullets li { 
+      margin: 12px 0; 
+      line-height: 1.65;
+      position: relative;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      padding-left: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .bullets li:hover {
+      color: var(--accent);
+      transform: translateX(2px);
+    }
+
+    .bullets li::before {
+      content: '•';
+      color: var(--accent);
+      font-weight: bold;
+      position: absolute;
+      left: -18px;
+      font-size: 1.2em;
+      transition: all 0.2s ease;
+    }
+
+    .bullets li:hover::before {
+      transform: scale(1.2);
+    }
+
+    .edu-item, .cert-item { 
+      display: grid; 
+      grid-template-columns: 1fr auto; 
+      gap: 10px 16px; 
+      padding: 18px 0; 
+      border-bottom: 1px solid var(--border);
+      transition: all 0.2s ease;
+      border-radius: 8px;
+      margin: 0 -12px;
+      padding-left: 12px;
+      padding-right: 12px;
+      position: relative;
+    }
+
+    .edu-item::before, .cert-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    .edu-item:hover, .cert-item:hover {
+      background: var(--hover);
+      transform: translateX(4px);
+    }
+
+    .edu-item:hover::before, .cert-item:hover::before {
+      width: 3px;
+    }
+
+    .edu-item:last-child, .cert-item:last-child { 
+      border-bottom: 0; 
+    }
+
+    .minor { 
+      color: var(--muted); 
+      font-size: clamp(0.85rem, 2vw, 0.9rem); 
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      
+      .edu-item, .cert-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        text-align: left;
+      }
+      
+      .chips {
+        gap: 8px;
+      }
+      
+      .chip {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+      }
+      
+      section {
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .summary-bullets {
+        padding-left: 18px;
+      }
+      
+      .summary-bullets li {
+        margin: 12px 0;
+        font-size: 0.85rem;
+      }
+
+      .bullets {
+        padding-left: 18px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .wrapper {
+        padding: 0 12px;
+      }
+      
+      header {
+        padding: 14px 16px;
+      }
+      
+      section {
+        padding: 16px;
+      }
+      
+      .contact > div {
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Better focus states */
+    *:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* Loading animation */
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    .loading {
+      animation: pulse 2s infinite;
+    }
+
+    /* Scroll animations */
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      animation: slideInUp 0.6s ease-out forwards;
+    }
+
+    section:nth-child(2) { animation-delay: 0.1s; }
+    section:nth-child(3) { animation-delay: 0.2s; }
+    section:nth-child(4) { animation-delay: 0.3s; }
+    section:nth-child(5) { animation-delay: 0.4s; }
+    section:nth-child(6) { animation-delay: 0.5s; }
+
+    @media print {
+      body { background: #fff; color: #000; }
+      header { background: #4338ca !important; }
+      header, section { 
+        box-shadow: none; 
+        border-color: #ddd; 
+        break-inside: avoid;
+        animation: none;
+      }
+      a { color: inherit; text-decoration: none; }
+      .wrapper { margin: 0; padding: 0; }
+      section { margin-bottom: 16px; }
+      
+      .chip:hover, .bullets li:hover, .summary-bullets li:hover,
+      .edu-item:hover, .cert-item:hover, .job:hover {
+        transform: none;
+        color: inherit;
+      }
+    }
+
+    /* Accessibility improvements */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="wrapper">
- 
-    <!-- HEADER -->
-    <header role="banner" aria-label="Resume header">
-      <div class="identity">
-        <h1 class="name">Savitha Thangavel</h1>
-        <p class="tagline">Senior Cognos Developer • Business Intelligence Expert</p>
-      </div>
-      <address class="contact" aria-label="Contact information">
-        <div>📞 (+1) 555-123-4567</div>
-        <div>✉️ <a href="mailto:savitha.thangavel@example.com">savitha.thangavel@example.com</a></div>
-        <div>🔗 <a href="https://www.linkedin.com/in/savitha-thangavel/" target="_blank">linkedin.com/in/savitha-thangavel</a></div>
-        <div>📍 Boston, MA</div>
-      </address>
-    </header>
- 
-    <!-- HIGH-LEVEL SUMMARY -->
-    <section class="summary" aria-labelledby="summary">
-      <h2 id="summary">High-Level Summary</h2>
-      <ul class="summary-bullets">
-        <li>Senior Cognos Developer with over 10 years of comprehensive experience in Business Intelligence, Data Analysis, Data Modeling, Report Development/Maintenance, Deployment, and Production Support across Banking (JPMC), Retail (IKEA, Nokia, The Home Depot), and Insurance (Point32Health) client projects at both on-site and remote locations.</li>
-        <li>Extensive expertise in Cognos Report Development, Dashboards, Framework Manager, and Transformers.</li>
-        <li>Proficient in QlikView Report Development and Maintenance.</li>
-        <li>Strong hands-on experience in developing interactive dashboards and storytelling solutions using Tableau.</li>
-        <li>Proven expertise in leveraging Power BI for data visualization and business intelligence solutions.</li>
-        <li>Actively involved in planning, monitoring, and managing Data/BI Reporting projects and related activities.</li>
-        <li>In-depth experience in Dimensional and Relational Data Modeling, Fact and Dimension Tables, Data Modules, Performance Tuning, Job Scheduling, and Event Studio Agents.</li>
-        <li>Proficient in handling various data sources such as Oracle PL/SQL, Teradata, flat files, IQD, CSV, and XML formats.</li>
-        <li>Proven ability to collaborate directly and remotely with customers, business users, and business analysts.</li>
-        <li>Strong leadership experience in managing and mentoring team members, reviewing deliverables, and providing guidance as needed.</li>
-      </ul>
-    </section>
- 
-    <!-- SKILLS -->
-    <section aria-labelledby="skills">
-      <h2 id="skills">Skills</h2>
-      <div class="chips">
-        <span class="chip">IBM Cognos</span>
-        <span class="chip">QlikView</span>
-        <span class="chip">Tableau</span>
-        <span class="chip">Power BI</span>
-        <span class="chip">Oracle PL/SQL</span>
-        <span class="chip">Teradata</span>
-        <span class="chip">Data Modeling</span>
-        <span class="chip">ETL</span>
-        <span class="chip">Framework Manager</span>
-        <span class="chip">Transformers</span>
-        <span class="chip">Event Studio</span>
-        <span class="chip">Business Intelligence</span>
-        <span class="chip">Dashboard Development</span>
-        <span class="chip">Performance Tuning</span>
-      </div>
-    </section>
- 
-    <!-- WORK EXPERIENCE -->
-    <section aria-labelledby="experience">
-      <h2 id="experience">Work Experience</h2>
- 
-      <!-- JOB 1 -->
-      <article class="job" aria-labelledby="job1-title">
-        <div class="job-header">
-          <div>
-            <div id="job1-title" class="job-title">Senior Cognos Developer</div>
-            <div class="job-meta">Point32Health • Contract</div>
-          </div>
-          <div class="job-meta">
-            <span class="job-location">Boston, MA</span> •
-            <time datetime="2022-01">Jan 2022</time> – <time datetime="2025-09">Present</time>
-          </div>
-        </div>
-        <ul class="bullets">
-          <li>Led development and maintenance of critical business intelligence reports using IBM Cognos for healthcare operations, serving 500+ internal users.</li>
-          <li>Designed and implemented complex data models in Framework Manager, improving query performance by 40% across insurance and member data systems.</li>
-          <li>Collaborated with business stakeholders to translate requirements into actionable BI solutions, reducing report delivery time by 35%.</li>
-          <li>Mentored junior developers and conducted code reviews, ensuring best practices and knowledge transfer across the team.</li>
-        </ul>
-      </article>
- 
-      <!-- JOB 2 -->
-      <article class="job" aria-labelledby="job2-title">
-        <div class="job-header">
-          <div>
-            <div id="job2-title" class="job-title">Cognos BI Developer</div>
-            <div class="job-meta">The Home Depot • Contract</div>
-          </div>
-          <div class="job-meta">
-            <span class="job-location">Atlanta, GA</span> •
-            <time datetime="2019-03">Mar 2019</time> – <time datetime="2021-12">Dec 2021</time>
-          </div>
-        </div>
-        <ul class="bullets">
-          <li>Developed and maintained 150+ Cognos reports and dashboards for retail operations, inventory management, and sales analytics.</li>
-          <li>Implemented Event Studio agents for automated report scheduling and distribution, reducing manual processes by 60%.</li>
-          <li>Optimized existing reports and queries, achieving 25% improvement in overall system performance.</li>
-          <li>Worked with Oracle and Teradata databases to extract, transform, and present data for executive-level reporting.</li>
-        </ul>
-      </article>
- 
-      <!-- JOB 3 -->
-      <article class="job" aria-labelledby="job3-title">
-        <div class="job-header">
-          <div>
-            <div id="job3-title" class="job-title">BI Developer</div>
-            <div class="job-meta">JPMorgan Chase • Full-time</div>
-          </div>
-          <div class="job-meta">
-            <span class="job-location">New York, NY</span> •
-            <time datetime="2016-06">Jun 2016</time> – <time datetime="2019-02">Feb 2019</time>
-          </div>
-        </div>
-        <ul class="bullets">
-          <li>Designed and developed financial reporting solutions using Cognos BI suite for risk management and compliance departments.</li>
-          <li>Created interactive dashboards and ad-hoc reporting capabilities for business users, improving data accessibility by 50%.</li>
-          <li>Participated in data warehouse modernization projects, migrating legacy reports to new Cognos architecture.</li>
-          <li>Collaborated with cross-functional teams to ensure data accuracy and regulatory compliance in all reporting solutions.</li>
-        </ul>
-      </article>
- 
-      <!-- JOB 4 -->
-      <article class="job" aria-labelledby="job4-title">
-        <div class="job-header">
-          <div>
-            <div id="job4-title" class="job-title">Junior BI Analyst</div>
-            <div class="job-meta">IKEA • Full-time</div>
-          </div>
-          <div class="job-meta">
-            <span class="job-location">Philadelphia, PA</span> •
-            <time datetime="2014-08">Aug 2014</time> – <time datetime="2016-05">May 2016</time>
-          </div>
-        </div>
-        <ul class="bullets">
-          <li>Developed operational reports and KPI dashboards using Cognos and QlikView for retail operations and supply chain management.</li>
-          <li>Assisted in data modeling and ETL process design for sales and inventory data integration.</li>
-          <li>Provided production support and troubleshooting for existing BI applications, maintaining 99% uptime.</li>
-          <li>Trained end users on report navigation and self-service analytics capabilities.</li>
-        </ul>
-      </article>
-    </section>
- 
-    <!-- CERTIFICATIONS -->
-    <section aria-labelledby="certs">
-      <h2 id="certs">Certifications</h2>
-      <div class="cert-item">
-        <div><strong>IBM Cognos Analytics Professional</strong> — IBM</div>
-        <div class="minor"><time datetime="2023">2023</time></div>
-      </div>
-      <div class="cert-item">
-        <div><strong>Tableau Desktop Specialist</strong> — Tableau</div>
-        <div class="minor"><time datetime="2022">2022</time></div>
-      </div>
-      <div class="cert-item">
-        <div><strong>Microsoft Power BI Data Analyst</strong> — Microsoft</div>
-        <div class="minor"><time datetime="2021">2021</time></div>
-      </div>
-      <div class="cert-item">
-        <div><strong>Oracle Database SQL Certified Associate</strong> — Oracle</div>
-        <div class="minor"><time datetime="2020">2020</time></div>
-      </div>
-      <div class="cert-item">
-        <div><strong>QlikView Business Analyst</strong> — QlikTech</div>
-        <div class="minor"><time datetime="2018">2018</time></div>
-      </div>
-    </section>
- 
-    <!-- EDUCATION -->
-    <section aria-labelledby="education">
-      <h2 id="education">Education</h2>
-      <div class="edu-item">
-        <div>
-          <strong>Master of Science, Information Systems</strong>
-          <div class="minor">University of Massachusetts Boston</div>
-        </div>
-        <div class="minor"><time datetime="2014">2014</time></div>
-      </div>
-      <div class="edu-item">
-        <div>
-          <strong>Bachelor of Engineering, Computer Science</strong>
-          <div class="minor">Anna University, Chennai, India</div>
-        </div>
-        <div class="minor"><time datetime="2012">2012</time></div>
-      </div>
-    </section>
- 
-  </div>
- 
-  <script>
-    // Add loading animation on page load
-    document.addEventListener('DOMContentLoaded', function() {
-      document.body.classList.remove('loading');
-     
-      // Intersection Observer for scroll animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.1 });
- 
-      document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
-      });
-    });
- 
-    // Enhanced hover effects for chips
-    document.querySelectorAll('.chip').forEach(chip => {
-      chip.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-2px) scale(1.02)';
-      });
-     
-      chip.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-      });
-    });
- 
-    // Smooth animations for job items
-    document.querySelectorAll('.job').forEach(job => {
-      job.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateX(4px)';
-      });
-     
-      job.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateX(0)';
-      });
-    });
-  </script>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <header role="banner" aria-label="Resume header">
+      <div class="identity">
+        <h1 class="name">Savitha Thangavel</h1>
+        <p class="tagline">Senior Cognos Developer • Business Intelligence Expert</p>
+      </div>
+      <address class="contact" aria-label="Contact information">
+        <div>📞 (+1) 555-123-4567</div>
+        <div>✉️ <a href="mailto:savitha.thangavel@example.com">savitha.thangavel@example.com</a></div>
+        <div>🔗 <a href="https://www.linkedin.com/in/savitha-thangavel/" target="_blank">linkedin.com/in/savitha-thangavel</a></div>
+        <div>📍 Boston, MA</div>
+      </address>
+    </header>
+
+    <!-- HIGH-LEVEL SUMMARY -->
+    <section class="summary" aria-labelledby="summary">
+      <h2 id="summary">High-Level Summary</h2>
+      <ul class="summary-bullets">
+        <li>Senior Cognos Developer with over 10 years of comprehensive experience in Business Intelligence, Data Analysis, Data Modeling, Report Development/Maintenance, Deployment, and Production Support across Banking (JPMC), Retail (IKEA, Nokia, The Home Depot), and Insurance (Point32Health) client projects at both on-site and remote locations.</li>
+        <li>Extensive expertise in Cognos Report Development, Dashboards, Framework Manager, and Transformers.</li>
+        <li>Proficient in QlikView Report Development and Maintenance.</li>
+        <li>Strong hands-on experience in developing interactive dashboards and storytelling solutions using Tableau.</li>
+        <li>Proven expertise in leveraging Power BI for data visualization and business intelligence solutions.</li>
+        <li>Actively involved in planning, monitoring, and managing Data/BI Reporting projects and related activities.</li>
+        <li>In-depth experience in Dimensional and Relational Data Modeling, Fact and Dimension Tables, Data Modules, Performance Tuning, Job Scheduling, and Event Studio Agents.</li>
+        <li>Proficient in handling various data sources such as Oracle PL/SQL, Teradata, flat files, IQD, CSV, and XML formats.</li>
+        <li>Proven ability to collaborate directly and remotely with customers, business users, and business analysts.</li>
+        <li>Strong leadership experience in managing and mentoring team members, reviewing deliverables, and providing guidance as needed.</li>
+      </ul>
+    </section>
+
+    <!-- SKILLS -->
+    <section aria-labelledby="skills">
+      <h2 id="skills">Skills</h2>
+      <div class="chips">
+        <span class="chip">IBM Cognos</span>
+        <span class="chip">QlikView</span>
+        <span class="chip">Tableau</span>
+        <span class="chip">Power BI</span>
+        <span class="chip">Oracle PL/SQL</span>
+        <span class="chip">Teradata</span>
+        <span class="chip">Data Modeling</span>
+        <span class="chip">ETL</span>
+        <span class="chip">Framework Manager</span>
+        <span class="chip">Transformers</span>
+        <span class="chip">Event Studio</span>
+        <span class="chip">Business Intelligence</span>
+        <span class="chip">Dashboard Development</span>
+        <span class="chip">Performance Tuning</span>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE -->
+    <section aria-labelledby="experience">
+      <h2 id="experience">Work Experience</h2>
+
+      <!-- JOB 1 -->
+      <article class="job" aria-labelledby="job1-title">
+        <div class="job-header">
+          <div>
+            <div id="job1-title" class="job-title">Senior Cognos Developer</div>
+            <div class="job-meta">Point32Health • Contract</div>
+          </div>
+          <div class="job-meta">
+            <span class="job-location">Boston, MA</span> •
+            <time datetime="2022-01">Jan 2022</time> – <time datetime="2025-09">Present</time>
+          </div>
+        </div>
+        <ul class="bullets">
+          <li>Led development and maintenance of critical business intelligence reports using IBM Cognos for healthcare operations, serving 500+ internal users.</li>
+          <li>Designed and implemented complex data models in Framework Manager, improving query performance by 40% across insurance and member data systems.</li>
+          <li>Collaborated with business stakeholders to translate requirements into actionable BI solutions, reducing report delivery time by 35%.</li>
+          <li>Mentored junior developers and conducted code reviews, ensuring best practices and knowledge transfer across the team.</li>
+        </ul>
+      </article>
+
+      <!-- JOB 2 -->
+      <article class="job" aria-labelledby="job2-title">
+        <div class="job-header">
+          <div>
+            <div id="job2-title" class="job-title">Cognos BI Developer</div>
+            <div class="job-meta">The Home Depot • Contract</div>
+          </div>
+          <div class="job-meta">
+            <span class="job-location">Atlanta, GA</span> •
+            <time datetime="2019-03">Mar 2019</time> – <time datetime="2021-12">Dec 2021</time>
+          </div>
+        </div>
+        <ul class="bullets">
+          <li>Developed and maintained 150+ Cognos reports and dashboards for retail operations, inventory management, and sales analytics.</li>
+          <li>Implemented Event Studio agents for automated report scheduling and distribution, reducing manual processes by 60%.</li>
+          <li>Optimized existing reports and queries, achieving 25% improvement in overall system performance.</li>
+          <li>Worked with Oracle and Teradata databases to extract, transform, and present data for executive-level reporting.</li>
+        </ul>
+      </article>
+
+      <!-- JOB 3 -->
+      <article class="job" aria-labelledby="job3-title">
+        <div class="job-header">
+          <div>
+            <div id="job3-title" class="job-title">BI Developer</div>
+            <div class="job-meta">JPMorgan Chase • Full-time</div>
+          </div>
+          <div class="job-meta">
+            <span class="job-location">New York, NY</span> •
+            <time datetime="2016-06">Jun 2016</time> – <time datetime="2019-02">Feb 2019</time>
+          </div>
+        </div>
+        <ul class="bullets">
+          <li>Designed and developed financial reporting solutions using Cognos BI suite for risk management and compliance departments.</li>
+          <li>Created interactive dashboards and ad-hoc reporting capabilities for business users, improving data accessibility by 50%.</li>
+          <li>Participated in data warehouse modernization projects, migrating legacy reports to new Cognos architecture.</li>
+          <li>Collaborated with cross-functional teams to ensure data accuracy and regulatory compliance in all reporting solutions.</li>
+        </ul>
+      </article>
+
+      <!-- JOB 4 -->
+      <article class="job" aria-labelledby="job4-title">
+        <div class="job-header">
+          <div>
+            <div id="job4-title" class="job-title">Junior BI Analyst</div>
+            <div class="job-meta">IKEA • Full-time</div>
+          </div>
+          <div class="job-meta">
+            <span class="job-location">Philadelphia, PA</span> •
+            <time datetime="2014-08">Aug 2014</time> – <time datetime="2016-05">May 2016</time>
+          </div>
+        </div>
+        <ul class="bullets">
+          <li>Developed operational reports and KPI dashboards using Cognos and QlikView for retail operations and supply chain management.</li>
+          <li>Assisted in data modeling and ETL process design for sales and inventory data integration.</li>
+          <li>Provided production support and troubleshooting for existing BI applications, maintaining 99% uptime.</li>
+          <li>Trained end users on report navigation and self-service analytics capabilities.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section aria-labelledby="certs">
+      <h2 id="certs">Certifications</h2>
+      <div class="cert-item">
+        <div><strong>IBM Cognos Analytics Professional</strong> — IBM</div>
+        <div class="minor"><time datetime="2023">2023</time></div>
+      </div>
+      <div class="cert-item">
+        <div><strong>Tableau Desktop Specialist</strong> — Tableau</div>
+        <div class="minor"><time datetime="2022">2022</time></div>
+      </div>
+      <div class="cert-item">
+        <div><strong>Microsoft Power BI Data Analyst</strong> — Microsoft</div>
+        <div class="minor"><time datetime="2021">2021</time></div>
+      </div>
+      <div class="cert-item">
+        <div><strong>Oracle Database SQL Certified Associate</strong> — Oracle</div>
+        <div class="minor"><time datetime="2020">2020</time></div>
+      </div>
+      <div class="cert-item">
+        <div><strong>QlikView Business Analyst</strong> — QlikTech</div>
+        <div class="minor"><time datetime="2018">2018</time></div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section aria-labelledby="education">
+      <h2 id="education">Education</h2>
+      <div class="edu-item">
+        <div>
+          <strong>Master of Science, Information Systems</strong>
+          <div class="minor">University of Massachusetts Boston</div>
+        </div>
+        <div class="minor"><time datetime="2014">2014</time></div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <strong>Bachelor of Engineering, Computer Science</strong>
+          <div class="minor">Anna University, Chennai, India</div>
+        </div>
+        <div class="minor"><time datetime="2012">2012</time></div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // Add loading animation on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.classList.remove('loading');
+      
+      // Intersection Observer for scroll animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+      });
+    });
+
+    // Enhanced hover effects for chips
+    document.querySelectorAll('.chip').forEach(chip => {
+      chip.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px) scale(1.02)';
+      });
+      
+      chip.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+
+    // Smooth animations for job items
+    document.querySelectorAll('.job').forEach(job => {
+      job.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateX(4px)';
+      });
+      
+      job.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateX(0)';
+      });
+    });
+  </script>
 </body>
 </html>
- 
