@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name – Resume</title>
+  <meta name="description" content="Professional resume of Your Name." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <!-- HEADER -->
+    <header role="banner" aria-label="Resume header">
+      <div class="identity">
+        <h1 class="name">Your Name</h1>
+        <p class="tagline">Role / Specialization · Key Strengths or Industry</p>
+      </div>
+      <address class="contact" aria-label="Contact information">
+        <div>📞 (+1) 555-123-4567</div>
+        <div>✉️ <a href="mailto:your.email@example.com">your.email@example.com</a></div>
+        <div>🔗 <a href="https://www.linkedin.com/in/your-link/">linkedin.com/in/your-link</a></div>
+        <div>📍 City, Province/State, Country</div>
+      </address>
+    </header>
+
+    <div class="grid">
+      <!-- SIDEBAR -->
+      <aside aria-label="Sidebar">
+        <section class="summary" aria-labelledby="summary">
+          <h2 id="summary">High-Level Summary</h2>
+          <p>
+            Outcome-focused [Your Role] with [X]+ years of experience in [domains/industries].
+            Known for [top strengths]. Delivered [notable achievement with metric], and
+            [another impact], using [key tools/tech].
+          </p>
+        </section>
+
+        <section aria-labelledby="skills">
+          <h2 id="skills">Skills</h2>
+          <div class="chips">
+            <span class="chip">Project Management</span>
+            <span class="chip">Agile / Scrum</span>
+            <span class="chip">Stakeholder Management</span>
+            <span class="chip">Data Analysis</span>
+            <span class="chip">Azure / AWS</span>
+            <span class="chip">Power BI</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Python</span>
+          </div>
+        </section>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main aria-label="Main content">
+        <section aria-labelledby="experience">
+          <h2 id="experience">Work Experience</h2>
+
+          <!-- EMPLOYER 1 -->
+          <article class="job" aria-labelledby="job1-title">
+            <div class="job-header">
+              <div>
+                <div id="job1-title" class="job-title">Senior Project Manager</div>
+                <div class="job-meta">Employer 1 • Full-time</div>
+              </div>
+              <div class="job-meta">
+                <span class="job-location">Toronto, ON</span> •
+                <time datetime="2021-01">Jan 2021</time> – <time datetime="2025-08">Present</time>
+              </div>
+            </div>
+            <ul class="bullets">
+              <li>Led a cross-functional team of 12 to deliver a $3.2M digital transformation program on time and 8% under budget.</li>
+              <li>Improved release velocity by 35% by implementing CI/CD and automated testing across 4 product squads.</li>
+              <li>Negotiated vendor contracts, reducing third‑party costs by 18% while improving SLA compliance to 99.5%.</li>
+            </ul>
+          </article>
+
+          <!-- EMPLOYER 2 -->
+          <article class="job" aria-labelledby="job2-title">
+            <div class="job-header">
+              <div>
+                <div id="job2-title" class="job-title">Project Lead</div>
+                <div class="job-meta">Employer 2 • Full-time</div>
+              </div>
+              <div class="job-meta">
+                <span class="job-location">Mississauga, ON</span> •
+                <time datetime="2018-06">Jun 2018</time> – <time datetime="2020-12">Dec 2020</time>
+              </div>
+            </div>
+            <ul class="bullets">
+              <li>Managed end‑to‑end delivery of an analytics platform used by 500+ users, enabling 20% faster decision cycles.</li>
+              <li>Established Agile ceremonies and OKRs, increasing stakeholder satisfaction from 7.2 to 9.1/10.</li>
+              <li>Implemented risk management framework reducing critical incidents by 40% YoY.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section aria-labelledby="education">
+          <h2 id="education">Education</h2>
+          <div class="edu-item">
+            <div>
+              <strong>M.S., Information Systems</strong>
+              <div class="minor">University Name</div>
+            </div>
+            <div class="minor"><time datetime="2018">2018</time></div>
+          </div>
+
+          <div class="edu-item">
+            <div>
+              <strong>B.Eng., Computer Engineering</strong>
+              <div class="minor">University Name</div>
+            </div>
+            <div class="minor"><time datetime="2015">2015</time></div>
+          </div>
+        </section>
+
+        <section aria-labelledby="certs">
+          <h2 id="certs">Certifications</h2>
+          <div class="cert-item">
+            <div><strong>PMP</strong> — Project Management Institute</div>
+            <div class="minor"><time datetime="2024">2024</time></div>
+          </div>
+          <div class="cert-item">
+            <div><strong>Certified ScrumMaster (CSM)</strong> — Scrum Alliance</div>
+            <div class="minor"><time datetime="2022">2022</time></div>
+          </div>
+          <div class="cert-item">
+            <div><strong>Microsoft Azure Fundamentals (AZ‑900)</strong> — Microsoft</div>
+            <div class="minor"><time datetime="2021">2021</time></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <button class="print-btn" aria-label="Download or print resume" onclick="window.print()">🖨️ Download PDF</button>
+</body>
+</html>
